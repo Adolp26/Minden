@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 RUN apk add --no-cache python3 make g++
 
-WORKDIR /app
+WORKDIR /src
 
 COPY package*.json ./
 
@@ -10,6 +10,8 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+RUN npx tsc
 
-CMD ["npm", "start"]
+EXPOSE 8000
+
+CMD ["node", "dist/index.js"]
