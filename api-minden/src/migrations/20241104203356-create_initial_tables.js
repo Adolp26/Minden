@@ -304,10 +304,10 @@ module.exports = {
   async down(queryInterface) {
     await queryInterface.dropTable('notificacoes');
     await queryInterface.dropTable('avaliacao');
-    await queryInterface.dropTable('atividade');
-    await queryInterface.dropTable('acompanhamento');
+    await queryInterface.dropTable('acompanhamento'); // Exclua a tabela dependente antes
+    await queryInterface.dropTable('atividade');      // Depois exclua a tabela referenciada
+    await queryInterface.dropTable('usuarios');       // Exclua usuários antes de instituições
+    await queryInterface.dropTable('instituicoes');   // Exclua a tabela referenciada por usuários
     await queryInterface.dropTable('infrator');
-    await queryInterface.dropTable('instituicoes');
-    await queryInterface.dropTable('usuarios');
   },
 };
