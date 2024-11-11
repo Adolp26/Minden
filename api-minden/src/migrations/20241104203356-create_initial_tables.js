@@ -30,6 +30,14 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     });
 
     // Criando a tabela "instituicoes"
@@ -49,6 +57,14 @@ module.exports = {
         allowNull: false,
       },
       data_created: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
@@ -74,6 +90,14 @@ module.exports = {
       historico_criminal: Sequelize.TEXT,
       dados_contato: Sequelize.STRING(50),
       data_created: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
@@ -111,6 +135,14 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     });
 
     // Criando a tabela "atividade"
@@ -143,6 +175,14 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     });
 
     // Criando a tabela "avaliacao"
@@ -167,6 +207,14 @@ module.exports = {
       nota: Sequelize.DECIMAL(3, 2),
       observacoes: Sequelize.TEXT,
       data_created: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
@@ -197,6 +245,14 @@ module.exports = {
       status: {
         type: Sequelize.STRING(50),
         defaultValue: 'Enviado',
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
     });
 
@@ -301,13 +357,13 @@ module.exports = {
     });
   },
 
-  async down(queryInterface) {
-    await queryInterface.dropTable('notificacoes');
-    await queryInterface.dropTable('avaliacao');
-    await queryInterface.dropTable('atividade');
-    await queryInterface.dropTable('acompanhamento');
-    await queryInterface.dropTable('infrator');
-    await queryInterface.dropTable('instituicoes');
+  async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('usuarios');
+    await queryInterface.dropTable('instituicoes');
+    await queryInterface.dropTable('infrator');
+    await queryInterface.dropTable('acompanhamento');
+    await queryInterface.dropTable('atividade');
+    await queryInterface.dropTable('avaliacao');
+    await queryInterface.dropTable('notificacoes');
   },
 };

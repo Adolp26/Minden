@@ -1,5 +1,5 @@
 import express from 'express';
-
+import usuarioRoutes from './routes/usuarioRoutes'
 const app = express();
 
 app.use(express.json()); // Para suportar JSON no body
@@ -10,7 +10,7 @@ app.get('/api/test', (req, res) => {
 });
 
 // Aqui você pode adicionar outras rotas, como:
-// app.use('/api/clientes', clienteRoutes); // Rotas de cliente
+app.use('/api', usuarioRoutes); // Rotas de cliente
 // app.use('/api/funcionarios', funcionarioRoutes); // Rotas do funcionário
 // app.use('/api
 
