@@ -9,10 +9,10 @@ const router = express.Router();
 // router.use(authMiddleware);
 
 // Rotas CRUD
-router.post('/instituicao', InstituicaoController.create);
-router.get('/instituicao', InstituicaoController.getAll);
-router.get('/instituicao/:id', InstituicaoController.getById);
-router.put('/instituicao/:id', InstituicaoController.update);
-router.delete('/instituicao/:id', InstituicaoController.delete);
+router.post('/', InstituicaoController.create);
+router.get('/', InstituicaoController.getAll);
+router.get('/:id', InstituicaoController.getById);
+router.put('/:id', InstituicaoController.update);
+router.delete('/:id', InstituicaoController.delete);
 
 export default router;

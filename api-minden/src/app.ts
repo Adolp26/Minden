@@ -11,7 +11,7 @@ app.get('/api/test', (req, res) => {
 });
 
 // Aqui você pode adicionar outras rotas, como:
-app.use('/api', usuarioRoutes); // Rotas de cliente
+app.use('/api/usuarios', usuarioRoutes); // Rotas de cliente
 
 //Rotas para instituições
 app.use('/api/instituicoes', instituicaoRoutes);
