@@ -4,6 +4,7 @@ import instituicaoRoutes from './routes/instituicaoRoutes'
 import infratorRoutes from './routes/infratorRoutes'
 import atividadeRoutes from './routes/atividadeRoutes';
 import acompanhamentoRoutes from './routes/acompanhamentoRoutes'
+import avaliacaoRoutes from './routes/avaliacaoRoutes';
 const app = express();
 
 app.use(express.json()); // Para suportar JSON no body
@@ -27,5 +28,7 @@ app.use('/api/atividades', atividadeRoutes);
 
 //Rotas para o acompanhamento
 app.use('/api/acompanhamentos', acompanhamentoRoutes);
+
+app.use('api/avaliacao', avaliacaoRoutes);
 
 export default app;
