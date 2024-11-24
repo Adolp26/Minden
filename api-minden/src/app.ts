@@ -2,6 +2,7 @@ import express from 'express';
 import usuarioRoutes from './routes/usuarioRoutes'
 import instituicaoRoutes from './routes/instituicaoRoutes'
 import infratorRoutes from './routes/infratorRoutes'
+import atividadeRoutes from './routes/atividadeRoutes';
 const app = express();
 
 app.use(express.json()); // Para suportar JSON no body
@@ -19,5 +20,8 @@ app.use('/api/instituicoes', instituicaoRoutes);
 
 //Rotas para o infrator
 app.use ('/api/infratores', infratorRoutes)
+
+//Rotas para as atividades
+app.use('/api/atividades', atividadeRoutes);
 
 export default app;
