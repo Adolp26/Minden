@@ -19,12 +19,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Minden/api-minden  # Navegar para o diretório correto onde está o package.json
+          cd /api-minden  # Navegar para o diretório correto onde está o package.json
           npm install
 
       - name: Compile TypeScript
-        run: |
-          cd Minden/api-minden  # Navegar para o diretório correto
+        run: |depl
+          cd /api-minden  # Navegar para o diretório correto
           npx tsc
 
       - name: Create .env file (using secrets)
