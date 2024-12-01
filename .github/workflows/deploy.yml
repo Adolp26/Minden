@@ -14,9 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      # 1. Faz o checkout do repositório
       - name: Checkout Repository
-        uses: actions/checkout@v4  # Versão mais recente
+        uses: actions/checkout@v4
         
+      # 2. Configura o Node.js na versão especificada
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,45 +26,49 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'api-minden/package-lock.json'
 
+      # 3. Instala dependências no GitHub Actions para garantir consistência
       - name: Install Dependencies
         working-directory: api-minden
-        run: npm ci  # Usa package-lock.json para instalação mais rápida e reproduzível
+        run: npm ci
 
+      # 4. Compila o TypeScript no ambiente de CI para validação
       - name: Compile TypeScript
         working-directory: api-minden
         run: npx tsc
 
+      # 5. Conecta à instância EC2 e realiza o deploy
       - name: Deploy to AWS EC2
-        uses: appleboy/ssh-action@v1.0.3  # Versão mais recente
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
-            # Navegue para o diretório do projeto
+            set -e  # Encerra o script se algum comando falhar
+            
+            echo "Navigating to application directory..."
             cd ${{ env.APP_DIRECTORY }}
             
-            # Cria o arquivo .env no diretório correto
-            echo "HOST=localhost" > .env
-            echo "USER=${{ secrets.DB_USER }}" >> .env
-            echo "PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-            echo "PORT=8000" >> .env
+            echo "Creating the .env file..."
+            cat <<EOF > .env
+            HOST=localhost
+            USER=${{ secrets.DB_USER }}
+            PASSWORD=${{ secrets.DB_PASSWORD }}
+            PORT=8000
+            EOF
             
-            # Garante que o Git está configurado corretamente
-            git config --global pull.rebase false
+            echo "Stopping the current application..."
+            pm2 stop app || true  # Para o processo caso já esteja em execução
             
-            # Para a aplicação atual
-            pm2 stop app || true
-            
-            # Atualiza o código
+            echo "Updating code from GitHub..."
             git fetch origin
             git reset --hard origin/master
             
-            # Instala dependências
-            npm ci
+            echo "Installing dependencies..."
+            npm ci  # Instala as dependências no ambiente de produção
             
-            # Compila TypeScript
+            echo "Compiling TypeScript..."
             npx tsc
             
-            # Reinicia a aplicação com PM2
-            pm2 restart app || pm2 start npm --name "app" -- start
+            echo "Starting the application with PM2..."
+            pm2 start npm --name "app" -- start || pm2 restart app
