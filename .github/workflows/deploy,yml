@@ -3,7 +3,7 @@ name: Deploy to AWS
 on:
   push:
     branches:
-      - main  # O deploy será feito quando um push for feito na branch 'main'
+      - master  # O deploy será feito quando um push for feito na branch 'main'
 
 jobs:
   deploy:
