@@ -11,7 +11,7 @@ app.use(express.json()); // Para suportar JSON no body
 
 // Rota de teste para verificar se a aplicação está funcionando
 app.get('/api/test', (req, res) => {
-  res.status(200).json({ message: 'API funfando bem meu nobre' });
+  res.status(200).json({ message: 'Cara, como pode?' });
 });
 
 // Aqui você pode adicionar outras rotas, como:
