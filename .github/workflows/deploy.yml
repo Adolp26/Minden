@@ -1,58 +1,68 @@
-name: Deploy to AWS
+name: Deploy to AWS EC2
 
 on:
   push:
     branches:
-      - master  # Gatilho para a branch 'master'
+      - master  # Gatilho para a branch principal
+
+env:
+  NODE_VERSION: '20'
+  APP_DIRECTORY: '~/Minden/api-minden'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Versão mais recente
+        
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: 'api-minden/package-lock.json'
 
-      - name: Install dependencies
-        run: |
-          cd api-minden  # Navegar para o diretório correto onde está o package.json
-          npm install
+      - name: Install Dependencies
+        working-directory: api-minden
+        run: npm ci  # Usa package-lock.json para instalação mais rápida e reproduzível
 
       - name: Compile TypeScript
-        run: |
-          cd api-minden  # Navegar para o diretório correto
-          npx tsc
+        working-directory: api-minden
+        run: npx tsc
 
-      - name: Create .env file (using secrets)
-        run: |
-          cd api-minden  # Navegar para o diretório correto
-          echo "HOST=localhost" >> .env
-          echo "USER=${{ secrets.DB_USER }}" >> .env
-          echo "PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-          echo "PORT=5432" >> .env
-        env:
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-
-      - name: SSH into AWS EC2 instance and deploy
-        uses: appleboy/ssh-action@v0.1.0
+      - name: Deploy to AWS EC2
+        uses: appleboy/ssh-action@v1.0.3  # Versão mais recente
         with:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
-            echo "Stopping the current application..."
-            cd ~/Minden/api-minden  # Caminho do seu app na instância EC2
-            pm2 stop app || true  # Para a aplicação, caso esteja rodando
-            echo "Pulling the latest changes from Git..."
-            git pull origin master
-            echo "Installing dependencies..."
-            npm install
-            echo "Compiling TypeScript..."
+            # Navegue para o diretório do projeto
+            cd ${{ env.APP_DIRECTORY }}
+            
+            # Cria o arquivo .env no diretório correto
+            echo "HOST=localhost" > .env
+            echo "USER=${{ secrets.DB_USER }}" >> .env
+            echo "PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+            echo "PORT=5432" >> .env
+            
+            # Garante que o Git está configurado corretamente
+            git config --global pull.rebase false
+            
+            # Para a aplicação atual
+            pm2 stop app || true
+            
+            # Atualiza o código
+            git fetch origin
+            git reset --hard origin/master
+            
+            # Instala dependências
+            npm ci
+            
+            # Compila TypeScript
             npx tsc
-            echo "Starting the application..."
-            npm start &
+            
+            # Reinicia a aplicação com PM2
+            pm2 restart app || pm2 start npm --name "app" -- start
