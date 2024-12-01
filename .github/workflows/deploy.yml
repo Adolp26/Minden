@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Minden/api-minden  # Navegar para o diretório correto
+          cd Minden/api-minden  # Navegar para o diretório correto onde está o package.json
           npm install
 
       - name: Compile TypeScript
@@ -56,4 +56,3 @@ jobs:
             npx tsc
             echo "Starting the application..."
             npm start &
-
