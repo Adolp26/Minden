@@ -19,17 +19,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd /api-minden  # Navegar para o diretório correto onde está o package.json
+          cd api-minden  # Navegar para o diretório correto onde está o package.json
           npm install
 
       - name: Compile TypeScript
         run: |
-          cd /api-minden  # Navegar para o diretório correto
+          cd api-minden  # Navegar para o diretório correto
           npx tsc
 
       - name: Create .env file (using secrets)
         run: |
-          cd Minden/api-minden  # Navegar para o diretório correto
+          cd api-minden  # Navegar para o diretório correto
           echo "HOST=localhost" >> .env
           echo "USER=${{ secrets.DB_USER }}" >> .env
           echo "PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
