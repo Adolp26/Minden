@@ -46,7 +46,7 @@ jobs:
             echo "HOST=localhost" > .env
             echo "USER=${{ secrets.DB_USER }}" >> .env
             echo "PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-            echo "PORT=5432" >> .env
+            echo "PORT=8000" >> .env
             
             # Garante que o Git está configurado corretamente
             git config --global pull.rebase false
