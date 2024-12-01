@@ -51,9 +51,10 @@ jobs:
             
             echo "Creating the .env file..."
             cat <<EOF > .env
-            HOST=localhost
-            USER=${{ secrets.DB_USER }}
-            PASSWORD=${{ secrets.DB_PASSWORD }}
+            DB_NAME="minden"
+            DB_HOST="localhost"
+            DB_USER="${{ secrets.DB_USER }}"
+            DB_PASSWORD=" ${{ secrets.DB_PASSWORD }}"
             PORT=8000
             EOF
             

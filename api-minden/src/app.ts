@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import usuarioRoutes from './routes/usuarioRoutes'
 import instituicaoRoutes from './routes/instituicaoRoutes'
 import infratorRoutes from './routes/infratorRoutes'
@@ -6,6 +7,8 @@ import atividadeRoutes from './routes/atividadeRoutes';
 import acompanhamentoRoutes from './routes/acompanhamentoRoutes'
 import avaliacaoRoutes from './routes/avaliacaoRoutes';
 const app = express();
+
+app.use(cors());
 
 app.use(express.json()); // Para suportar JSON no body
 
