@@ -3,7 +3,7 @@ name: Deploy to AWS
 on:
   push:
     branches:
-      - master  # O deploy será feito quando um push for feito na branch 'main'
+      - master  # Gatilho para a branch 'master'
 
 jobs:
   deploy:
@@ -18,13 +18,18 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd Minden/api-minden  # Navegar para o diretório correto
+          npm install
 
       - name: Compile TypeScript
-        run: npx tsc
+        run: |
+          cd Minden/api-minden  # Navegar para o diretório correto
+          npx tsc
 
       - name: Create .env file (using secrets)
         run: |
+          cd Minden/api-minden  # Navegar para o diretório correto
           echo "HOST=localhost" >> .env
           echo "USER=${{ secrets.DB_USER }}" >> .env
           echo "PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
@@ -40,14 +45,15 @@ jobs:
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
-                echo "Stopping the current application..."
-                cd /home/ubuntu/Minden/api-minden  # Caminho correto para o seu app
-                pm2 stop app || true  # Para a aplicação, caso esteja rodando
-                echo "Pulling the latest changes from Git..."
-                git pull origin main
-                echo "Installing dependencies..."
-                npm install
-                echo "Compiling TypeScript..."
-                npx tsc
-                echo "Starting the application..."
-                npm start &
+            echo "Stopping the current application..."
+            cd ~/Minden/api-minden  # Caminho do seu app na instância EC2
+            pm2 stop app || true  # Para a aplicação, caso esteja rodando
+            echo "Pulling the latest changes from Git..."
+            git pull origin master
+            echo "Installing dependencies..."
+            npm install
+            echo "Compiling TypeScript..."
+            npx tsc
+            echo "Starting the application..."
+            npm start &
+
