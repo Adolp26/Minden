@@ -1,0 +1,22 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+:root {
+    --ion-color-success: #34d399; /* Define o verde dos botões */
+  }
+  body{
+    background-color: #ffffff;
+  }
+  ion-app, ion-router-outlet{
+    height: 100%;
+}
+
+ion-content, ion-page{
+  --position: fixed;
+  --background-color: #ffffff;
+  
+}
+
+#background-content{
+ background-color: #ffffff;
+}

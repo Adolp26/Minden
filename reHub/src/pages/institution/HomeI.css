@@ -1,0 +1,208 @@
+.containerHI{
+    padding: 12px;
+    width: 100%;
+}
+
+.headerHI {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.header-spacer {
+    flex-grow: 1;
+}
+
+.sair-btn {
+    background-color: #ff8585;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.profile-btn {
+    padding: 8px 16px 24px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: black;
+    width: 40%;
+    height: 10px;
+    border-radius: 15px;
+    background-color: #83FFBA;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.menu-button {
+    background-color: white;
+    width: 35%;
+    height: 35px;
+    padding-left: 12px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #838383;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.logoMindenHI{
+    padding-top: 12px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-placeholder {
+    width: 24px;
+    height: 24px;
+    mix-blend-mode: multiply;
+    border-radius: 50%;
+}
+
+
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.em-andamento {
+    background-color: #fff176;
+}
+
+.nao-iniciado {
+    background-color: #e0e0e0;
+}
+
+.finalizado {
+    background-color: #90EE90;
+}
+
+
+
+
+
+.add-activity-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #83FFBA;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 20px auto;
+    cursor: pointer;
+    border: none;
+    color: black;
+}
+
+.vagas-info {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    mix-blend-mode: multiply;
+}
+
+.card {
+    width: 250px; /* Largura do card */
+    background: white; /* Cor de fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para evitar que o conteúdo transborde */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; /* Sombra */
+    display: inline-block; /* Para permitir que os cards fiquem lado a lado */
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}
+.cards-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.cards-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.cards-container {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.person-card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.person-image {
+    width: 100%;
+    height: 200px;
+    background-color: #ddd;
+}
+
+.cardInfo {
+    padding: 15px;
+}
+
+.person-info h3 {
+    margin: 5px 0;
+}
+
+.activity-card h3 {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.activity-info{
+    padding: 15px;
+}
+
+.activity-info h3{
+    margin: 5px 0;
+}
+
+.activity-image {
+    width: 100%;
+    height: 200px;
+    background-color: #ddd;
+}
+.activity-card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+}

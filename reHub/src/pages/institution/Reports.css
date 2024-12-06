@@ -1,0 +1,32 @@
+.containerRI {
+    width: 100%;
+    height: 100%;
+    padding: 4%;
+  }
+  
+  .titleRI{
+    padding: 12px;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+  }
+  
+  .col img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .col p {
+    margin: 0.25rem 0;
+  }

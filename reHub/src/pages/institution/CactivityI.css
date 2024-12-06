@@ -1,0 +1,123 @@
+/* Container principal */
+.containerCA {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Cartão da organização */
+.organization-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.org-image-container {
+    width: 60px;
+    height: 60px;
+    background-color: #820000;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.org-info h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
+
+.org-info p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: #666;
+}
+
+/* Formulário */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+form input[type="date"] {
+    font-family: Arial, sans-serif;
+}
+
+form textarea {
+    resize: none;
+    height: 80px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #72f6b5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+button[type="submit"]:hover {
+    background-color: #60d79a;
+}
+
+.status-message {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}

@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.containerH {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.headerH {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.back-button-placeholder {
+  width: 24px;
+  height: 24px;
+  background: #eee;
+}
+
+.menu-button-placeholder {
+  width: 24px;
+  height: 24px;
+  background: #eee;
+}
+
+.titleH {
+  font-size: 22px;
+  margin: 20px;
+  color: #333;
+}
+
+.activity-list {
+  list-style: none;
+}
+

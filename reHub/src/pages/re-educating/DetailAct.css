@@ -1,0 +1,104 @@
+.containerDet {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerD {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.back-button-placeholder {
+    width: 24px;
+    height: 24px;
+    background: #eee;
+}
+
+.page-counter {
+    color: #666;
+}
+
+.logo-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #4a0d29;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.contentDet {
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.address {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.duration {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.duration-icon-placeholder {
+    width: 24px;
+    height: 24px;
+    background: #eee;
+    margin-right: 10px;
+}
+
+.activities-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.activity-list {
+    list-style: none;
+}
+
+.activity-item {
+    padding: 12px 0;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+.apply-button {
+    background-color: #83ffba; 
+  color: #000;
+  border: none; 
+  border-radius: 30px; 
+  padding: 20px; 
+  cursor: pointer;
+  width: 50%; 
+}
+
+.space{
+    margin: 20px;
+}

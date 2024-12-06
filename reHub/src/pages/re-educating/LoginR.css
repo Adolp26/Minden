@@ -1,0 +1,244 @@
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  overflow: hidden; /* Permite que os círculos sejam visíveis */
+  z-index: 1; /* Conteúdo principal acima dos círculos */
+}
+
+.containerL {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%; /* Ajuste inicial */
+  position: relative;
+  z-index: -1; /* Conteúdo acima dos círculos */
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  height: 30%; /* Ajuste inicial */
+  background-color: #ffffff;
+}
+
+.inptLabel {
+  color: black;
+  padding-left: 5%;
+}
+
+.inpt {
+  width: 100%;
+  height: 70%; /* Ajuste inicial */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000; /* Cor da borda */
+  border-radius: 30px; /* Cantos arredondados */
+  outline: none; /* Remove a outline padrão */
+  background-color: aliceblue;
+  margin-top: 0%;
+  color: #000;
+}
+
+.inpt:focus {
+  border-color: #4f999b; /* Cor da borda ao focar */
+  box-shadow: 0 0 5px rgba(79, 153, 155, 0.5); /* Sombra ao focar */
+}
+
+.inptGroup {
+  width: 100%;
+  height: 25%; /* Ajuste inicial */
+}
+
+.buttonLogin {
+  background-color: #83ffba; /* Cor do botão */
+  color: #000; /* Cor do texto */
+  border: none; /* Remove borda padrão */
+  border-radius: 30px; /* Cantos arredondados */
+  padding: 10px; /* Espaçamento interno */
+  cursor: pointer; /* Cursor pointer ao passar o mouse */
+  width: 50%; /* Largura total */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.back-buttonL{
+  position: fixed;
+  height: 3%;
+  top: 20px;
+  left: 20px
+}
+
+.customLogin:hover {
+  background-color: #4f999b; /* Cor ao passar o mouse */
+}
+
+.circle {
+  position: fixed;
+  border-radius: 50%;
+  z-index: 0; /* Círculos no fundo */
+}
+
+/* Círculo superior direito (sobreposto) */
+.circle-2-top {
+  width: 250px;
+  height: 250px;
+  background: #83ffba;
+  top: -130px; /* Levanta o círculo */
+  right: -110px; /* Move para o lado direito */
+  z-index: 1; /* Fica por cima de outros círculos */
+}
+
+/* Círculo superior direito menor */
+.circle-1-top-small {
+  width: 150px;
+  height: 150px;
+  background: #4f999b;
+  top: 30px; /* Um pouco mais abaixo */
+  right: -75px; /* Mais centralizado em relação ao outro */
+  z-index: 2; /* Fica acima do círculo maior */
+}
+
+/* Círculo inferior esquerdo */
+.circle-3-bottom {
+  width: 500px;
+  height: 500px;
+  background: #4f999b;
+  bottom: -275px;
+  left: px;
+  z-index: 1; /* Mantém no fundo */
+}
+
+.circle-4-bottom-small {
+  width: 150px;
+  height: 150px;
+  background-color: #83ffba;
+  bottom: 100px;
+  left: 325px;
+  z-index: 0;
+}
+
+.circle-5-bottom-medium {
+  width: 170px;
+  height: 170px;
+  background: #6ad8b3;
+  bottom: -27px;
+  left: -30px;
+  z-index: 2; /* Mantém no fundo */
+}
+
+.logo-icon {
+  padding-bottom: 40px;
+}
+
+h2 {
+  color: #000;
+}
+
+.textBlue {
+  color: rgb(7, 133, 236);
+}
+
+@media (max-height: 750px) {
+  .containerL {
+    height: 70%; /* Ajusta a altura para telas menores */
+    z-index: -1;
+  }
+
+  .test {
+    height: auto; /* Permite que o formulário se ajuste */
+  }
+
+  .inpt {
+    height: 50px; /* Ajusta a altura dos inputs */
+  }
+
+  .inptGroup {
+    margin-top: 20px;
+  }
+
+  .buttonLogin {
+    padding: 8px; /* Ajusta o padding do botão */
+    margin-top: 8px;
+  }
+  .circle-3-bottom {
+    width: 400px;
+    height: 400px;
+    bottom: -170px;
+  }
+  .circle-4-bottom-small {
+    width: 150px;
+    height: 150px;
+    background-color: #83ffba;
+    bottom: 100px;
+    left: 280px;
+    z-index: 0;
+  }
+}
+
+/* Media Queries para diferentes tamanhos de tela */
+@media (min-width: 600px) and (max-width: 768px) {
+  .containerL {
+    height: 80%; /* Ajusta a altura para telas menores */
+    z-index: -1;
+  }
+
+  .test {
+    width: 90%; /* Aumenta a largura do formulário */
+    height: 45; /* Ajusta a altura automaticamente */
+  }
+
+  .inpt {
+    height: 50px; /* Ajusta a altura dos inputs */
+  }
+  .inptGroup {
+    width: 100%;
+    height: 40%; /* Ajuste inicial */
+  }
+
+  .buttonLogin {
+    width: 60%; /* Aumenta a largura do botão */
+  }
+
+  .circle-2-top {
+    width: 200px; /* Reduz o tamanho do círculo maior */
+    height: 200px;
+  }
+
+  .circle-1-top-small {
+    width: 120px; /* Reduz o tamanho do círculo menor */
+    height: 120px;
+  }
+
+  .circle-3-bottom {
+    width: 500px;
+    height: 500px;
+    background: #4f999b;
+    bottom: -275px;
+    left: px;
+    z-index: 1; /* Mantém no fundo */
+  }
+
+  .circle-4-bottom-small {
+    width: 150px;
+    height: 150px;
+    background-color: #83ffba;
+    bottom: 100px;
+    left: 325px;
+    z-index: 0;
+  }
+
+  .circle-5-bottom-medium {
+    width: 170px;
+    height: 170px;
+    background: #6ad8b3;
+    bottom: -27px;
+    left: -30px;
+    z-index: 2; /* Mantém no fundo */
+  }
+}

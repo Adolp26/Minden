@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist",
+        "excludeFiles": [
+          "node_modules/**/*",
+          ".vscode/**/*",
+          "cypress/**/*",
+          ".browserslistrc",
+          ".eslintrc.js",
+          ".vscode/**/*"
+        ]
+      }
+    }
+  ]
+}

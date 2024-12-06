@@ -1,0 +1,31 @@
+.reeducation-itemR {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .reeducation-imageR {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  
+  .reeducation-infoR {
+    flex-grow: 1;
+  }
+  
+  .reeducation-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .reeducation-subtitle {
+    font-size: 12px;
+    color: #666;
+  }

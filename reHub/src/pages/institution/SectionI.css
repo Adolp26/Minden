@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.status-bar {
+    background-color: white;
+    padding: 8px 16px;
+    text-align: right;
+    color: #666;
+}
+
+.header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.back-buttonSI {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.session-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.main-card {
+    margin: 16px;
+    background-color: #800020;
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    text-align: center;
+    height: 250px;
+}
+
+.settings{
+    mix-blend-mode: multiply;
+}
+
+.logo-text {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.subtitle-text {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.group-info {
+    margin: 24px 16px;
+    position: relative;
+}
+
+.group-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-right: 40px;
+}
+
+.settings-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    border-radius: 4px;
+}
+
+.address {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.description {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.duration {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.duration-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    margin-right: 12px;
+}
+
+.applications-title {
+    margin: 24px 16px 16px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}

@@ -1,0 +1,202 @@
+/* Fundo */
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  overflow: hidden; /* Permite que os círculos sejam visíveis */
+  z-index: 1; /* Conteúdo principal acima dos círculos */
+}
+
+/* Círculos decorativos */
+.circle {
+  position: fixed;
+  border-radius: 50%;
+  z-index: 0; /* Círculos no fundo */
+}
+
+/* Círculo superior direito (sobreposto) */
+.circle-top {
+  width: 250px;
+  height: 250px;
+  background: #4F999B;
+  top: -130px; /* Levanta o círculo */
+  right: -130px; /* Move para o lado direito */
+  z-index: 1; /* Fica por cima de outros círculos */
+}
+
+/* Círculo superior direito menor */
+.circle-top-small {
+  width: 150px;
+  height: 150px;
+  background: #83FFBA;
+  top: 20px; /* Um pouco mais abaixo */
+  right: -70px; /* Mais centralizado em relação ao outro */
+  z-index: 2; /* Fica acima do círculo maior */
+}
+
+/* Círculo inferior esquerdo */
+.circle-bottom {
+  width: 700px;
+  height: 700px;
+  background: #6ad8b3;
+  bottom: -480px;
+  left: -325px;
+  z-index: 0; /* Mantém no fundo */
+}
+
+.circle-bottom-small {
+  width: 450px;
+  height: 450px;
+  background-color: #4F999B;
+  bottom: -300px;
+  left: 30px;
+  z-index: 1;
+}
+
+/* Container principal */
+.containerS {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: -1; /* Conteúdo acima dos círculos */
+}
+
+/* Estilização do logo */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logoMinden {
+  padding-bottom: 40px;
+}
+
+.logo-text {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  color: #000;
+  margin: 0;
+}
+
+/* Botões personalizados */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+}
+
+.custom-button {
+  background-color: #83FFBA; /* Cor do botão */
+  color: #000; /* Cor do texto */
+  border: none; /* Remove borda padrão */
+  border-radius: 20px; /* Cantos arredondados */
+  padding: 10px; /* Espaçamento interno */
+  cursor: pointer; /* Cursor pointer ao passar o mouse */
+  width: 100%; /* Largura total */
+  font-size: 16px; /* Tamanho da fonte */
+  transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.custom-button:hover {
+  background-color: #4F999B; /* Cor ao passar o mouse */
+}
+
+/* Media Queries para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+  .background {
+      height: auto; /* Ajusta a altura do fundo */
+  }
+
+  .circle-top {
+      width: 200px;
+      height: 200px;
+      top: -100px; /* Ajusta a posição */
+      right: -100px; /* Ajusta a posição */
+  }
+
+  .circle-top-small {
+      width: 120px;
+      height: 120px;
+      top: 10px; /* Ajusta a posição */
+      right: -50px; /* Ajusta a posição */
+  }
+
+  .circle-bottom {
+      width: 600px;
+      height: 600px;
+      bottom: -400px;
+      left: -250px;
+  }
+
+  .circle-bottom-small {
+      width: 350px;
+      height: 350px;
+      bottom: -250px;
+  }
+
+  .containerS {
+      margin: 0 20px; /* Adiciona margem para telas menores */
+  }
+
+  .logo-text {
+      font-size: 28px; /* Reduz o tamanho da fonte */
+  }
+
+  .custom-button {
+      font-size: 14px; /* Reduz o tamanho da fonte do botão */
+}
+}
+
+@media (max-width: 480px) {
+  .background {
+      height: auto; /* Ajusta a altura do fundo */
+  }
+
+  .circle-top {
+      width: 150px;
+      height: 150px;
+      top: -80px; /* Ajusta a posição */
+      right: -80px; /* Ajusta a posição */
+  }
+
+  .circle-top-small {
+      width: 100px;
+      height: 100px;
+      top: 5px; /* Ajusta a posição */
+      right: -30px; /* Ajusta a posição */
+  }
+
+  .circle-bottom {
+      width: 500px;
+      height: 500px;
+      bottom: -300px;
+      left: -200px;
+  }
+
+  .circle-bottom-small {
+      width: 300px;
+      height: 300px;
+      bottom: -200px;
+  }
+
+  .containerS {
+      margin: 0 10px; /* Adiciona margem para telas menores */
+  }
+
+  .logo-text {
+      font-size: 24px; /* Reduz o tamanho da fonte */
+  }
+
+  .custom-button {
+      font-size: 12px; /* Reduz o tamanho da fonte do botão */
+  }
+}

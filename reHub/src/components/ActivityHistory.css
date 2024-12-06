@@ -1,0 +1,53 @@
+.activity-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .activity-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .calendar-icon-placeholder {
+    width: 24px;
+    height: 24px;
+    background: #eee;
+    margin-right: 12px;
+  }
+  
+  .activity-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .activity-name {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .activity-date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .activity-status {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .status-progress {
+    color: #007aff;
+  }
+  
+  .status-completed {
+    color: #34c759;
+  }
+  
+  .status-pendent{
+    color: #f7dc6f;
+  }
+  
